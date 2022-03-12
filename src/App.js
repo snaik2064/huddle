@@ -1,8 +1,10 @@
 import { ThemeProvider } from 'styled-components';
 
 import Header from './components/Header';
+import Card from './components/Card';
 import Container from './components/styles/Container.styled';
 import GlobalStyles from './components/styles/Global';
+import content from './content';
 
 const theme = {
   colors: {
@@ -20,7 +22,9 @@ function App() {
         <GlobalStyles />
         <Header />
         <Container>
-          <h1> In new app!!! </h1>{' '}
+          {content.map((item) => (
+            <Card key={Math.random()} item={item} />
+          ))}
         </Container>
       </>
     </ThemeProvider>
